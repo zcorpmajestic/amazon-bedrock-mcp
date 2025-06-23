@@ -35,9 +35,7 @@ class MCPClient:
             raise RuntimeError("Not connected to MCP server")
             
         tools = await self.session.list_tools()
-        _, tools_list = tools
-        _, tools_list = tools_list
-        return tools_list
+        return tools.tools
 
     async def call_tool(self, tool_name: str, arguments: dict) -> Any:
         """Call a tool with given arguments"""
